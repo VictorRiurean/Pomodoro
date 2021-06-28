@@ -89,12 +89,6 @@
 		578048DC2685193900FFB972 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				57A3D312264578FC00A3D311 /* CarouselView.swift */,
-				57A3D3152645790D00A3D311 /* CarouselCell.swift */,
-				578048E4268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.swift */,
-				578048E5268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.xib */,
-				57DD144A268A32D7007BBCAC /* SlidersTableViewCell.swift */,
-				57DD144B268A32D7007BBCAC /* SlidersTableViewCell.xib */,
 				57307CB82640761C00505702 /* Notifications.swift */,
 				578048E02688B0D800FFB972 /* FAQSection.swift */,
 				57307C91263C7CD900505702 /* PomodoroSettings.swift */,
@@ -107,6 +101,8 @@
 		578048DD2685194300FFB972 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57A3D312264578FC00A3D311 /* CarouselView.swift */,
+				57DD144F268A7317007BBCAC /* Cells */,
 				5781CB62263B1A7600228DF1 /* Main.storyboard */,
 			);
 			path = View;
@@ -156,6 +152,18 @@
 				5781CB6A263B1A7700228DF1 /* Info.plist */,
 			);
 			path = Pomodoro;
+			sourceTree = "<group>";
+		};
+		57DD144F268A7317007BBCAC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				57A3D3152645790D00A3D311 /* CarouselCell.swift */,
+				578048E4268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.swift */,
+				578048E5268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.xib */,
+				57DD144A268A32D7007BBCAC /* SlidersTableViewCell.swift */,
+				57DD144B268A32D7007BBCAC /* SlidersTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		A5227371BD49A64225452176 /* Frameworks */ = {
