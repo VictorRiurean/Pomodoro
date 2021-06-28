@@ -10,6 +10,9 @@
 		57307C92263C7CD900505702 /* PomodoroSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57307C91263C7CD900505702 /* PomodoroSettings.swift */; };
 		57307CB92640761C00505702 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57307CB82640761C00505702 /* Notifications.swift */; };
 		576D46BB264B16A1007AE5CC /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D46BA264B16A1007AE5CC /* TutorialViewController.swift */; };
+		578048E12688B0D800FFB972 /* FAQSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578048E02688B0D800FFB972 /* FAQSection.swift */; };
+		578048E6268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578048E4268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.swift */; };
+		578048E7268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 578048E5268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.xib */; };
 		5781CB5D263B1A7600228DF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781CB5C263B1A7600228DF1 /* AppDelegate.swift */; };
 		5781CB5F263B1A7600228DF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781CB5E263B1A7600228DF1 /* SceneDelegate.swift */; };
 		5781CB61263B1A7600228DF1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781CB60263B1A7600228DF1 /* HomeViewController.swift */; };
@@ -24,6 +27,8 @@
 		57A3D313264578FC00A3D311 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3D312264578FC00A3D311 /* CarouselView.swift */; };
 		57A3D3162645790D00A3D311 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3D3152645790D00A3D311 /* CarouselCell.swift */; };
 		57A3D31B2649755E00A3D311 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57A3D31D2649755E00A3D311 /* Localizable.strings */; };
+		57DD144C268A32D7007BBCAC /* SlidersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD144A268A32D7007BBCAC /* SlidersTableViewCell.swift */; };
+		57DD144D268A32D7007BBCAC /* SlidersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57DD144B268A32D7007BBCAC /* SlidersTableViewCell.xib */; };
 		B782B20F5A23655732F01007 /* Pods_Pomodoro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A39161B4DA47F48A215CD5 /* Pods_Pomodoro.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +37,9 @@
 		57307C91263C7CD900505702 /* PomodoroSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroSettings.swift; sourceTree = "<group>"; };
 		57307CB82640761C00505702 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		576D46BA264B16A1007AE5CC /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		578048E02688B0D800FFB972 /* FAQSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSection.swift; sourceTree = "<group>"; };
+		578048E4268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRestoreDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		578048E5268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoRestoreDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		5781CB59263B1A7600228DF1 /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5781CB5C263B1A7600228DF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5781CB5E263B1A7600228DF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +59,8 @@
 		57A3D31F2649759700A3D311 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
 		57A3D3202649759700A3D311 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		57A3D3212649759700A3D311 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		57DD144A268A32D7007BBCAC /* SlidersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidersTableViewCell.swift; sourceTree = "<group>"; };
+		57DD144B268A32D7007BBCAC /* SlidersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlidersTableViewCell.xib; sourceTree = "<group>"; };
 		8007D0DE719A3A46AC19453A /* Pods-Pomodoro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pomodoro.release.xcconfig"; path = "Target Support Files/Pods-Pomodoro/Pods-Pomodoro.release.xcconfig"; sourceTree = "<group>"; };
 		DA8140890BD61E735F715282 /* Pods-Pomodoro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pomodoro.debug.xcconfig"; path = "Target Support Files/Pods-Pomodoro/Pods-Pomodoro.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +86,45 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		578048DC2685193900FFB972 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57A3D312264578FC00A3D311 /* CarouselView.swift */,
+				57A3D3152645790D00A3D311 /* CarouselCell.swift */,
+				578048E4268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.swift */,
+				578048E5268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.xib */,
+				57DD144A268A32D7007BBCAC /* SlidersTableViewCell.swift */,
+				57DD144B268A32D7007BBCAC /* SlidersTableViewCell.xib */,
+				57307CB82640761C00505702 /* Notifications.swift */,
+				578048E02688B0D800FFB972 /* FAQSection.swift */,
+				57307C91263C7CD900505702 /* PomodoroSettings.swift */,
+				5781CB76263B350B00228DF1 /* SideMenu.swift */,
+				57A3D31D2649755E00A3D311 /* Localizable.strings */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		578048DD2685194300FFB972 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5781CB62263B1A7600228DF1 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		578048DE2685194700FFB972 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5781CB60263B1A7600228DF1 /* HomeViewController.swift */,
+				5781CB7F263B35AE00228DF1 /* HowToUseAppViewController.swift */,
+				576D46BA264B16A1007AE5CC /* TutorialViewController.swift */,
+				5781CB79263B357E00228DF1 /* StatisticsViewController.swift */,
+				5781CB7C263B358A00228DF1 /* FAQViewController.swift */,
+				5781CB83263B380100228DF1 /* SettingsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		5781CB50263B1A7600228DF1 = {
 			isa = PBXGroup;
 			children = (
@@ -99,19 +148,9 @@
 			children = (
 				5781CB5C263B1A7600228DF1 /* AppDelegate.swift */,
 				5781CB5E263B1A7600228DF1 /* SceneDelegate.swift */,
-				5781CB60263B1A7600228DF1 /* HomeViewController.swift */,
-				57A3D31D2649755E00A3D311 /* Localizable.strings */,
-				5781CB76263B350B00228DF1 /* SideMenu.swift */,
-				57307C91263C7CD900505702 /* PomodoroSettings.swift */,
-				57307CB82640761C00505702 /* Notifications.swift */,
-				5781CB79263B357E00228DF1 /* StatisticsViewController.swift */,
-				5781CB7F263B35AE00228DF1 /* HowToUseAppViewController.swift */,
-				57A3D3152645790D00A3D311 /* CarouselCell.swift */,
-				5781CB83263B380100228DF1 /* SettingsViewController.swift */,
-				576D46BA264B16A1007AE5CC /* TutorialViewController.swift */,
-				57A3D312264578FC00A3D311 /* CarouselView.swift */,
-				5781CB7C263B358A00228DF1 /* FAQViewController.swift */,
-				5781CB62263B1A7600228DF1 /* Main.storyboard */,
+				578048DC2685193900FFB972 /* Model */,
+				578048DD2685194300FFB972 /* View */,
+				578048DE2685194700FFB972 /* Controller */,
 				5781CB65263B1A7700228DF1 /* Assets.xcassets */,
 				5781CB67263B1A7700228DF1 /* LaunchScreen.storyboard */,
 				5781CB6A263B1A7700228DF1 /* Info.plist */,
@@ -187,6 +226,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57DD144D268A32D7007BBCAC /* SlidersTableViewCell.xib in Resources */,
+				578048E7268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.xib in Resources */,
 				5781CB69263B1A7700228DF1 /* LaunchScreen.storyboard in Resources */,
 				57A3D31B2649755E00A3D311 /* Localizable.strings in Resources */,
 				5781CB66263B1A7700228DF1 /* Assets.xcassets in Resources */,
@@ -255,7 +296,10 @@
 				5781CB7D263B358A00228DF1 /* FAQViewController.swift in Sources */,
 				5781CB5F263B1A7600228DF1 /* SceneDelegate.swift in Sources */,
 				5781CB77263B350B00228DF1 /* SideMenu.swift in Sources */,
+				578048E12688B0D800FFB972 /* FAQSection.swift in Sources */,
 				5781CB84263B380100228DF1 /* SettingsViewController.swift in Sources */,
+				57DD144C268A32D7007BBCAC /* SlidersTableViewCell.swift in Sources */,
+				578048E6268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

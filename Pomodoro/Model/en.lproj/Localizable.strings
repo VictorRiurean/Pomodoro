@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  Pomodoro
+
+  Created by Victor on 10/05/2021.
+  
+*/
+
+"Focus_sessions" = "Focus sessions";
+"Focus_hours" = "Focus hours";
+"Pomodoros" = "Pomodoros";
+"Focus_sessions_completed" = "Focus sessions completed";
+"Pomodoros_completed" = "Pomodoros completed";
+"Daily_info" = "Daily Info";
+"Focus_info" = "Focus Info";
+"Focus_info_message" = "Focus Info Message";
+"Short_break_info" = "Short Break Info";
+"Short_break_info_message" = "Short Break Info Message";
+"Long_break_info" = "Long Break Info";
+"Long_break_info_message" = "Long Break Info Message";
+"Sets_info" = "Sets Info";
+"Sets_info_message" = "Sets Info Message";
+"Question_1" = "What is a Pomodoro?";
+"Question_2" = "What is the best focus session length?";
+"Question_3" = "I'm experiencing fatigue by the time I finish a whole Pomodoro. What should I do?";
+"Question_4" = "What are the benefits of using the Pomodoro technique?";
+"Question_5" = "How many Pomodoros per day should I do?";
+"Question_6" = "Is there any research backing this technique up?";
+"Question_7" = "I suffer from ADHD, is this app right for me?";
+"Answer_1" = "Pomodoro is a technique used to split your time into sessions of focus and rest.";
+"Answer_2" = "People are different, so it varries from a person to another. You should experiment with focus session lengths until you find the one that is most appropriate for you. The settings can be changed in the settings tab.";
+"Answer_3" = "Focus fatigue is exactly what we are aiming to prevent with this app! What you can do is lower the number of sessions per Pomodoro and also lower the length of the focus sessions and maximize the length of the breaks. You can do all these things in the Settings tab.";
+"Answer_4" = "The structure provided by using the Pomodoro technique helps users get into the zone. Once you've found your groove, turning on the clock will get you in game day state of mind. The more you use it, the more it becomes part of your daily routine, bringning major improvements to your productivity.";
+"Answer_5" = "You should experiment over a few weeks and try to figure out what the optimum amount for you is. A good tip to help figure out what works best for you is this: after finishing each pomodoro, give your state of mind a grade on a scale from 1 to 10 and after a few weeks try comparing the results. The numbers should speak for themselves.";
+"Answer_6" = "Our app has over 20 000 users and around 1000 reviews, an overwhelming amount of them positive. There have not yet been any independent actors researching the effectiveness of the technique, but we feel like our user sample size is compelling.";
+"Answer_7" = "We hope that the structure provided by our app will be of great help for you. It definitely doesn't hurt to try. You can use the app for a few weeks and see if it has any impact on your productivity. After that we would love to hear your feedback, so please e-mail us and let us know!";
+"How_to_use_app_1" = "You should use the app like this";
+"How_to_use_app_2" = "And then you should to this";
+"How_to_use_app_3" = "And finally you need to do this";
+"Congrats" = "Congratulations!";
+"Pomodoro_completed" = "You have successfully completed a pomodoro!";
+

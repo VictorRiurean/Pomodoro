@@ -1,15 +1,20 @@
 //
-//  SettingsViewController.swift
+//  SlidersTableViewCell.swift
 //  Pomodoro
 //
-//  Created by Victor on 29/04/2021.
+//  Created by Victor on 28/06/2021.
 //
 
 import UIKit
 import RealmSwift
 
-class SettingsViewController: UIViewController {
+protocol ShowAlertProtocol {
+    func showAlertWith(title: String, message: String)
+    func reload()
+}
 
+class SlidersTableViewCell: UITableViewCell, RestoreDetailsProtocol, DidTouchSaveButtonProtocol {
+   
     @IBOutlet weak var focusSlider: UISlider!
     @IBOutlet weak var shortBreakSlider: UISlider!
     @IBOutlet weak var longBreakSlider: UISlider!
@@ -19,6 +24,10 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var shortBreakSliderValueLabel: UILabel!
     @IBOutlet weak var longBreakSliderValueLabel: UILabel!
     @IBOutlet weak var setsSliderValueLabel: UILabel!
+    
+    var delegate: ShowAlertProtocol?
+    
+    var settings = PomodoroSettings()
     
     var realm: Realm? = {
         do {
@@ -30,11 +39,9 @@ class SettingsViewController: UIViewController {
         }
     }()
     
-    var settings = PomodoroSettings()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initial display
         if let settingsArray = realm?.objects(PomodoroSettings.self) {
             if settingsArray.isEmpty {
                 try! realm?.write {
@@ -45,9 +52,15 @@ class SettingsViewController: UIViewController {
         
         setupSliders()
     }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
     
-    //MARK: - Prepare UI
-   
+    //MARK: - Prepare Sliders
+    
     func setupSliders() {
         if let settings = realm?.objects(PomodoroSettings.self)[0] {
             focusSlider.minimumValue = 10
@@ -92,13 +105,22 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    func Localize(text: String) -> String {
-        return NSLocalizedString(text, comment: "")
+    //MARK: - Protocol Methods
+    
+    func didTouchSaveButton() {
+        if let settings = realm?.objects(PomodoroSettings.self)[0] {
+            try! realm!.write {
+                settings.focus = Int(focusSlider.value)
+                settings.shortBreak = Int(shortBreakSlider.value)
+                settings.longBreak = Int(longBreakSlider.value)
+                settings.sets = Int(setsSlider.value)
+            }
+            let notification = Notification(name: .settingsChanged, object: settings)
+            NotificationCenter.default.post(notification)
+        }
     }
     
-    //MARK: - Actions
-    
-    @IBAction func didTouchRestoreDefaultsButton(_ sender: Any) {
+    func restoreDetails() {
         if let settings = realm?.objects(PomodoroSettings.self)[0] {
             try! realm!.write {
                 settings.focus = 25
@@ -138,22 +160,14 @@ class SettingsViewController: UIViewController {
             setsSlider.value = Float(settings.sets)
             setsSliderValueLabel.text = String(settings.sets)
         }
+        delegate?.reload()
     }
     
-    @IBAction func didTouchSaveButton(_ sender: Any) {
-        if let settings = realm?.objects(PomodoroSettings.self)[0] {
-            try! realm!.write {
-                settings.focus = Int(focusSlider.value)
-                settings.shortBreak = Int(shortBreakSlider.value)
-                settings.longBreak = Int(longBreakSlider.value)
-                settings.sets = Int(setsSlider.value)
-            }
-            let notification = Notification(name: .settingsChanged, object: settings)
-            NotificationCenter.default.post(notification)
-        }
+    func Localize(text: String) -> String {
+        return NSLocalizedString(text, comment: "")
     }
     
-    //MARK: Sliders
+    //MARK: - Sliders
     
     @IBAction func focusSliderValueChanged(_ sender: UISlider) {
         let value = Int(sender.value)
@@ -172,38 +186,37 @@ class SettingsViewController: UIViewController {
         self.longBreakSliderValueLabel.text = String(value)
         self.longBreakSliderValueLabel.sizeToFit()
     }
+    
     @IBAction func setsSliderValueChanged(_ sender: UISlider) {
         let value = Int(sender.value)
         self.setsSliderValueLabel.text = String(value)
         self.setsSliderValueLabel.sizeToFit()
     }
     
-    func showAlertWith(title: String, message: String){
-        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
-    }
-    
-    //MARK: Info Buttons
+    //MARK: - Info Buttons
     
     @IBAction func didTouchFocusInfoButton(_ sender: Any) {
         let title = Localize(text: "Focus_info")
         let message = Localize(text: "Focus_info_message")
-        showAlertWith(title: title, message: message)
+        delegate?.showAlertWith(title: title, message: message)
     }
+    
     @IBAction func didTouchShortBreakInfoButton(_ sender: Any) {
         let title = Localize(text: "Short_break_info")
         let message = Localize(text: "Short_break_info_message")
-        showAlertWith(title: title, message: message)
+        delegate?.showAlertWith(title: title, message: message)
     }
+    
     @IBAction func didTouchLongBreakInfoButton(_ sender: Any) {
         let title = Localize(text: "Long_break_info")
         let message = Localize(text: "Long_break_info_message")
-        showAlertWith(title: title, message: message)
+        delegate?.showAlertWith(title: title, message: message)
     }
+    
     @IBAction func didTouchSetsInfoButton(_ sender: Any) {
         let title = Localize(text: "Sets_info")
         let message = Localize(text: "Sets_info_message")
-        showAlertWith(title: title, message: message)
+        delegate?.showAlertWith(title: title, message: message)
     }
+    
 }

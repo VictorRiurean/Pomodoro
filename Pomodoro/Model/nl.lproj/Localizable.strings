@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  Pomodoro
+
+  Created by Victor on 10/05/2021.
+  
+*/
+
+"Focus_sessions" = "Focus sessies";
+"Focus_hours" = "Focus uren";
+"Pomodoros" = "Pomodoros;";
+"Focus_sessions_completed" = "Focus sessies afgerond";
+"Pomodoros_completed" = "Pomodoros afgerond";
+"Daily_info" = "Dagelijkse Info";
+"Focus_info" = "Focus Info";
+"Focus_info_message" = "Focus Info Message";
+"Short_break_info" = "Short Break Info";
+"Short_break_info_message" = "Short Break Info Message";
+"Long_break_info" = "Long Break Info";
+"Long_break_info_message" = "Long Break Info Message";
+"Sets_info" = "Sets Info";
+"Sets_info_message" = "Sets Info Message";
+"Question_1" = "Wat is een Pomodoro?";
+"Question_2" = "Wat is de beste duur van een focussessie?";
+"Question_3" = "Ik ervaar vermoeidheid tegen de tijd dat ik een hele Pomodoro heb afgemaakt. Wat moet ik doen?";
+"Question_4" = "Wat zijn de voordelen van het gebruik van de Pomodoro-techniek?";
+"Question_5" = "Hoeveel Pomodoro's per dag moet ik doen?";
+"Question_6" = "Is er enig onderzoek dat deze techniek ondersteunt?";
+"Question_7" = "Ik heb ADHD, is deze app geschikt voor mij?";
+"Answer_1" = "Pomodoro is a technique used to split your time into sessions of focus and rest.";
+"Answer_2" = "Mensen zijn verschillend, dus het verschilt van persoon tot persoon. Je moet experimenteren met de lengte van focussessies totdat je degene hebt gevonden die het meest geschikt is voor jou. De instellingen kunnen worden gewijzigd op het tabblad instellingen.";
+"Answer_3" = "Focusvermoeidheid is precies wat we met deze app willen voorkomen! Wat je wel kunt doen is het aantal sessies per Pomodoro verlagen en ook de lengte van de focussessies verlagen en de lengte van de pauzes maximaliseren. U kunt al deze dingen doen op het tabblad Instellingen.";
+"Answer_4" = "De structuur die wordt geboden door het gebruik van de Pomodoro-techniek helpt gebruikers om in de zone te komen. Als je eenmaal je groove hebt gevonden, zal het aanzetten van de klok je in de gemoedstoestand van de gamedag brengen. Hoe meer u het gebruikt, hoe meer het onderdeel wordt van uw dagelijkse routine, wat uw productiviteit aanzienlijk verbetert.";
+"Answer_5" = "U moet een paar weken experimenteren en proberen uit te vinden wat de optimale hoeveelheid voor u is. Een goede tip om erachter te komen wat voor jou het beste werkt, is deze: geef na elke pomodoro je gemoedstoestand een cijfer op een schaal van 1 tot 10 en probeer na een paar weken de resultaten te vergelijken. De cijfers moeten voor zich spreken.";
+"Answer_6" = "Onze app heeft meer dan 20 000 gebruikers en ongeveer 1000 beoordelingen, waarvan een overweldigend aantal positief. Er zijn nog geen onafhankelijke actoren geweest die de effectiviteit van de techniek hebben onderzocht, maar we hebben het gevoel dat onze steekproefomvang van gebruikers overtuigend is.";
+"Answer_7" = "We hopen dat de structuur van onze app je enorm zal helpen. Het kan zeker geen kwaad om het te proberen. Je kunt de app een paar weken gebruiken en kijken of het invloed heeft op je productiviteit. Daarna horen we graag uw feedback, dus stuur ons een e-mail en laat het ons weten!";
+"How_to_use_app_1" = "You should use the app like this";
+"How_to_use_app_2" = "And then you should to this";
+"How_to_use_app_3" = "And finally you need to do this";
+"Congrats" = "Gefeliciteerd!";
+"Pomodoro_completed" = "U heeft een pomodoro succesvol afgerond!";
