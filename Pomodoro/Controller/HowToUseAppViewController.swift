@@ -7,55 +7,70 @@
 
 import UIKit
 
-class HowToUseAppViewController: UIViewController {
+class HowToUseCollectionCell: UICollectionViewCell {
+    @IBOutlet weak var photoTip: UIImageView!
+    @IBOutlet weak var textTip: UILabel!
+}
+
+class HowToUseAppViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    private var carouselView: CarouselView?
-    private var carouselData = [CarouselView.CarouselData]()
-    
-    private let backgroundColors: [UIColor] = [#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1), #colorLiteral(red: 0.4826081395, green: 0.04436998069, blue: 0.2024421096, alpha: 1), #colorLiteral(red: 0.1728022993, green: 0.42700845, blue: 0.3964217603, alpha: 1)]
+    @IBOutlet weak var collectionView: UICollectionView!
+
+    var tips: [Tips] = [
+        Tips(photo: UIImage(named: "tomato")!, text: "Tip number 1"),
+        Tips(photo: UIImage(named: "tomato")!, text: "Tip number 1"),
+        Tips(photo: UIImage(named: "tomato")!, text: "Tip number 1"),
+        Tips(photo: UIImage(named: "tomato")!, text: "Tip number 1"),
+        Tips(photo: UIImage(named: "tomato")!, text: "Tip number 1"),
+        Tips(photo: UIImage(named: "tomato")!, text: "Tip number 1"),
+        Tips(photo: UIImage(named: "tomato")!, text: "Tip number 1")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        carouselView = CarouselView(pages: 3, delegate: self)
-        carouselData.append(.init(image: UIImage(named: "tomato"), text: Localize(text: "How_to_use_app_1")))
-        carouselData.append(.init(image: UIImage(named: "tomato"), text: Localize(text: "How_to_use_app_2")))
-        carouselData.append(.init(image: UIImage(named: "tomato"), text: Localize(text: "How_to_use_app_3")))
-        
+     
         setupUI()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        carouselView?.configureView(with: carouselData)
-    }
-    
     func setupUI() {
-        view.backgroundColor = backgroundColors.first
-        
-        guard let carouselView = carouselView else {
-            return
-        }
-        
-        view.addSubview(carouselView)
-        carouselView.translatesAutoresizingMaskIntoConstraints = false
-        carouselView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        carouselView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        carouselView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        carouselView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
-    func Localize(text: String) -> String {
-        return NSLocalizedString(text, comment: "")
+    func moveCollectionToFrame(contentOffset : CGFloat) {
+
+        let frame: CGRect = CGRect(x : contentOffset ,y : self.collectionView.contentOffset.y ,width : self.collectionView.frame.width,height : self.collectionView.frame.height)
+        self.collectionView.scrollRectToVisible(frame, animated: true)
     }
-}
 
-    // MARK: - CarouselViewDelegate
-
-extension HowToUseAppViewController: CarouselViewDelegate {
-    func currentPageDidChange(to page: Int) {
-        UIView.animate(withDuration: 0.7) {
-            self.view.backgroundColor = self.backgroundColors[page]
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return tips.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as? HowToUseCollectionCell {
+            cell.photoTip.image = tips[indexPath.row].photo
+            cell.textTip.text = tips[indexPath.row].text
+            return cell
         }
+        return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenSize: CGRect = collectionView.bounds
+        let width = screenSize.width
+        let height = screenSize.height
+        return CGSize(width: width, height: height)
+    }
+    
+    @IBAction func didTouchLeftButton(_ sender: Any) {
+        let collectionBounds = self.collectionView.bounds
+        let contentOffset = CGFloat(floor(self.collectionView.contentOffset.x - 10 - collectionBounds.size.width))
+        self.moveCollectionToFrame(contentOffset: contentOffset)
+    }
+    
+    @IBAction func didTouchRightButton(_ sender: Any) {
+        let collectionBounds = self.collectionView.bounds
+        let contentOffset = CGFloat(floor(self.collectionView.contentOffset.x + 10 + collectionBounds.size.width))
+        self.moveCollectionToFrame(contentOffset: contentOffset)
     }
 }

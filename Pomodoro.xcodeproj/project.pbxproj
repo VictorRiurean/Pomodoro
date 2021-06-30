@@ -10,6 +10,7 @@
 		57307C92263C7CD900505702 /* PomodoroSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57307C91263C7CD900505702 /* PomodoroSettings.swift */; };
 		57307CB92640761C00505702 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57307CB82640761C00505702 /* Notifications.swift */; };
 		576D46BB264B16A1007AE5CC /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D46BA264B16A1007AE5CC /* TutorialViewController.swift */; };
+		5771B3DF268CBFD600DACEEC /* Tips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5771B3DE268CBFD600DACEEC /* Tips.swift */; };
 		578048E12688B0D800FFB972 /* FAQSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578048E02688B0D800FFB972 /* FAQSection.swift */; };
 		578048E6268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578048E4268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.swift */; };
 		578048E7268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 578048E5268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.xib */; };
@@ -24,8 +25,6 @@
 		5781CB7D263B358A00228DF1 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781CB7C263B358A00228DF1 /* FAQViewController.swift */; };
 		5781CB80263B35AE00228DF1 /* HowToUseAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781CB7F263B35AE00228DF1 /* HowToUseAppViewController.swift */; };
 		5781CB84263B380100228DF1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781CB83263B380100228DF1 /* SettingsViewController.swift */; };
-		57A3D313264578FC00A3D311 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3D312264578FC00A3D311 /* CarouselView.swift */; };
-		57A3D3162645790D00A3D311 /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3D3152645790D00A3D311 /* CarouselCell.swift */; };
 		57A3D31B2649755E00A3D311 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57A3D31D2649755E00A3D311 /* Localizable.strings */; };
 		57DD144C268A32D7007BBCAC /* SlidersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DD144A268A32D7007BBCAC /* SlidersTableViewCell.swift */; };
 		57DD144D268A32D7007BBCAC /* SlidersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57DD144B268A32D7007BBCAC /* SlidersTableViewCell.xib */; };
@@ -37,6 +36,7 @@
 		57307C91263C7CD900505702 /* PomodoroSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroSettings.swift; sourceTree = "<group>"; };
 		57307CB82640761C00505702 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		576D46BA264B16A1007AE5CC /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		5771B3DE268CBFD600DACEEC /* Tips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips.swift; sourceTree = "<group>"; };
 		578048E02688B0D800FFB972 /* FAQSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSection.swift; sourceTree = "<group>"; };
 		578048E4268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoRestoreDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		578048E5268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoRestoreDetailsTableViewCell.xib; sourceTree = "<group>"; };
@@ -53,8 +53,6 @@
 		5781CB7C263B358A00228DF1 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		5781CB7F263B35AE00228DF1 /* HowToUseAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseAppViewController.swift; sourceTree = "<group>"; };
 		5781CB83263B380100228DF1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		57A3D312264578FC00A3D311 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
-		57A3D3152645790D00A3D311 /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 		57A3D31C2649755E00A3D311 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		57A3D31F2649759700A3D311 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
 		57A3D3202649759700A3D311 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -91,8 +89,8 @@
 			children = (
 				57307CB82640761C00505702 /* Notifications.swift */,
 				578048E02688B0D800FFB972 /* FAQSection.swift */,
+				5771B3DE268CBFD600DACEEC /* Tips.swift */,
 				57307C91263C7CD900505702 /* PomodoroSettings.swift */,
-				5781CB76263B350B00228DF1 /* SideMenu.swift */,
 				57A3D31D2649755E00A3D311 /* Localizable.strings */,
 			);
 			path = Model;
@@ -101,7 +99,6 @@
 		578048DD2685194300FFB972 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				57A3D312264578FC00A3D311 /* CarouselView.swift */,
 				57DD144F268A7317007BBCAC /* Cells */,
 				5781CB62263B1A7600228DF1 /* Main.storyboard */,
 			);
@@ -111,6 +108,7 @@
 		578048DE2685194700FFB972 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5781CB76263B350B00228DF1 /* SideMenu.swift */,
 				5781CB60263B1A7600228DF1 /* HomeViewController.swift */,
 				5781CB7F263B35AE00228DF1 /* HowToUseAppViewController.swift */,
 				576D46BA264B16A1007AE5CC /* TutorialViewController.swift */,
@@ -157,7 +155,6 @@
 		57DD144F268A7317007BBCAC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				57A3D3152645790D00A3D311 /* CarouselCell.swift */,
 				578048E4268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.swift */,
 				578048E5268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.xib */,
 				57DD144A268A32D7007BBCAC /* SlidersTableViewCell.swift */,
@@ -294,8 +291,7 @@
 			files = (
 				57307CB92640761C00505702 /* Notifications.swift in Sources */,
 				5781CB80263B35AE00228DF1 /* HowToUseAppViewController.swift in Sources */,
-				57A3D313264578FC00A3D311 /* CarouselView.swift in Sources */,
-				57A3D3162645790D00A3D311 /* CarouselCell.swift in Sources */,
+				5771B3DF268CBFD600DACEEC /* Tips.swift in Sources */,
 				5781CB61263B1A7600228DF1 /* HomeViewController.swift in Sources */,
 				5781CB7A263B357E00228DF1 /* StatisticsViewController.swift in Sources */,
 				576D46BB264B16A1007AE5CC /* TutorialViewController.swift in Sources */,
