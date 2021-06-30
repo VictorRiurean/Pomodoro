@@ -267,18 +267,18 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zA-1y-guv">
-                                <rect key="frame" x="386.5" y="437" width="17.5" height="22"/>
-                                <state key="normal" image="arrowtriangle.right" catalog="system"/>
-                                <connections>
-                                    <action selector="didTouchRightButton:" destination="bhB-Nf-yVT" eventType="touchUpInside" id="cBJ-qy-WTc"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnK-Ke-rnp">
                                 <rect key="frame" x="10" y="437" width="17.5" height="22"/>
                                 <state key="normal" image="arrowtriangle.left" catalog="system"/>
                                 <connections>
                                     <action selector="didTouchLeftButton:" destination="bhB-Nf-yVT" eventType="touchUpInside" id="eac-mv-lNH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zA-1y-guv">
+                                <rect key="frame" x="386.5" y="437" width="17.5" height="22"/>
+                                <state key="normal" image="arrowtriangle.right" catalog="system"/>
+                                <connections>
+                                    <action selector="didTouchRightButton:" destination="bhB-Nf-yVT" eventType="touchUpInside" id="cBJ-qy-WTc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -297,6 +297,8 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Df5-jN-RwL" id="sTn-jV-Mob"/>
+                        <outlet property="leftButton" destination="UnK-Ke-rnp" id="64U-3s-mzY"/>
+                        <outlet property="rightButton" destination="1zA-1y-guv" id="4UW-0y-bA2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fk-BM-2To" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -361,18 +363,18 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxj-sz-3Uv">
-                                <rect key="frame" x="386.5" y="437" width="17.5" height="22"/>
-                                <state key="normal" image="arrowtriangle.right" catalog="system"/>
-                                <connections>
-                                    <action selector="didTouchRightButton:" destination="SYZ-yR-43j" eventType="touchUpInside" id="D8l-e3-fqS"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqY-SK-Yot">
                                 <rect key="frame" x="10" y="437" width="17.5" height="22"/>
                                 <state key="normal" image="arrowtriangle.backward" catalog="system"/>
                                 <connections>
                                     <action selector="didTouchLeftButton:" destination="SYZ-yR-43j" eventType="touchUpInside" id="isy-Q3-k9I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxj-sz-3Uv">
+                                <rect key="frame" x="386.5" y="437" width="17.5" height="22"/>
+                                <state key="normal" image="arrowtriangle.right" catalog="system"/>
+                                <connections>
+                                    <action selector="didTouchRightButton:" destination="SYZ-yR-43j" eventType="touchUpInside" id="D8l-e3-fqS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -393,6 +395,8 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="DAi-i1-jM6" id="okz-Up-AHM"/>
+                        <outlet property="leftButton" destination="lqY-SK-Yot" id="sWz-Bh-cnG"/>
+                        <outlet property="rightButton" destination="Rxj-sz-3Uv" id="WOH-kl-1Ky"/>
                         <outlet property="skipButton" destination="hMf-tV-1pL" id="azS-aI-AEs"/>
                     </connections>
                 </viewController>

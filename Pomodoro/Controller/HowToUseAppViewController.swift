@@ -15,7 +15,10 @@ class HowToUseCollectionCell: UICollectionViewCell {
 class HowToUseAppViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
-
+   
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
+    
     var tips: [Tips] = [
         Tips(photo: UIImage(named: "tomato")!, text: "Tip number 1"),
         Tips(photo: UIImage(named: "tomato")!, text: "Tip number 1"),
@@ -24,6 +27,8 @@ class HowToUseAppViewController: UIViewController, UICollectionViewDelegate, UIC
         Tips(photo: UIImage(named: "tomato")!, text: "Tip number 1"),
         Tips(photo: UIImage(named: "tomato")!, text: "Tip number 1"),
         Tips(photo: UIImage(named: "tomato")!, text: "Tip number 1")]
+    
+    var currentPosition = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +39,10 @@ class HowToUseAppViewController: UIViewController, UICollectionViewDelegate, UIC
     func setupUI() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        if currentPosition == 0 {
+            leftButton.isHidden = true
+        }
     }
     
     func moveCollectionToFrame(contentOffset : CGFloat) {
@@ -63,12 +72,28 @@ class HowToUseAppViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     @IBAction func didTouchLeftButton(_ sender: Any) {
+        if rightButton.isHidden == true {
+            rightButton.isHidden = false
+        }
+        currentPosition -= 1
+        if currentPosition == 0 {
+            leftButton.isHidden = true
+        }
+        
         let collectionBounds = self.collectionView.bounds
         let contentOffset = CGFloat(floor(self.collectionView.contentOffset.x - 10 - collectionBounds.size.width))
         self.moveCollectionToFrame(contentOffset: contentOffset)
     }
     
     @IBAction func didTouchRightButton(_ sender: Any) {
+        if leftButton.isHidden == true {
+            leftButton.isHidden = false
+        }
+        currentPosition += 1
+        if currentPosition == tips.count - 1 {
+            rightButton.isHidden = true
+        }
+        
         let collectionBounds = self.collectionView.bounds
         let contentOffset = CGFloat(floor(self.collectionView.contentOffset.x + 10 + collectionBounds.size.width))
         self.moveCollectionToFrame(contentOffset: contentOffset)
