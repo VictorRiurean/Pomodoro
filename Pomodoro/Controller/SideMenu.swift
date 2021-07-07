@@ -14,7 +14,7 @@ protocol MenuControllerDelegateProtocol {
 
 enum SideMenuItem: String, CaseIterable {
     case home = "Home"
-    case howToUseIt = "How to use it"
+    case howToUseIt = "How to use app"
     case statistics = "Statistics"
     case FAQ = "FAQ"
     case settings = "Settings"
@@ -40,8 +40,9 @@ class MenuController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.backgroundColor = color
-        view.backgroundColor = color
+        tableView.backgroundColor = .white
+        tableView.separatorColor = UIColor.clear
+        view.backgroundColor = .white
     }
     
     //MARK: - Table View
@@ -53,9 +54,10 @@ class MenuController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = menuItems[indexPath.row].rawValue
-        cell.textLabel?.textColor = .white
-        cell.backgroundColor = color
-        cell.contentView.backgroundColor = color
+        cell.textLabel?.font = UIFont(name: "Roboto-Black", size: 20)
+        cell.textLabel?.textColor = Colors.myTextGray
+        cell.backgroundColor = .white
+        cell.contentView.backgroundColor = .white
         return cell
     }
     

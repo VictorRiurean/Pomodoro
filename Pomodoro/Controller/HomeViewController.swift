@@ -9,14 +9,8 @@ import UIKit
 import SideMenu
 import RealmSwift
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MenuControllerDelegateProtocol {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, MenuControllerDelegateProtocol {
    
-    @IBOutlet weak var minutesLeftLabel: UILabel!
-    @IBOutlet weak var secondsLeftLabel: UILabel!
-    @IBOutlet weak var enjoyBreakLabel: UILabel!
-    @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var pauseButton: UIButton!
-    @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var sideMenu: SideMenuNavigationController?
@@ -26,7 +20,50 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     private var FAQController: FAQViewController? = nil
     private var howToUseAppController: HowToUseAppViewController? = nil
     
-    var animationAdded: Bool = false
+    let playButton: UIButton = {
+        let playButton = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        playButton.backgroundColor = .green
+        playButton.translatesAutoresizingMaskIntoConstraints = false
+        playButton.setImage(UIImage(named: "play"), for: .normal)
+        playButton.clipsToBounds = true
+        playButton.addTarget(self, action: #selector(didTouchPlayButton), for: .touchUpInside)
+        return playButton
+    }()
+    let pauseButton: UIButton = {
+        let pauseButton = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        pauseButton.backgroundColor = .green
+        pauseButton.translatesAutoresizingMaskIntoConstraints = false
+        pauseButton.setImage(UIImage(named: "pause"), for: .normal)
+        pauseButton.clipsToBounds = true
+        pauseButton.addTarget(self, action: #selector(didTouchPauseButton), for: .touchUpInside)
+        return pauseButton
+    }()
+    let stopButton: UIButton = {
+        let stopButton = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        stopButton.backgroundColor = .green
+        stopButton.translatesAutoresizingMaskIntoConstraints = false
+        stopButton.setImage(UIImage(named: "stop"), for: .normal)
+        stopButton.clipsToBounds = true
+        stopButton.addTarget(self, action: #selector(didTouchStopButton), for: .touchUpInside)
+        return stopButton
+    }()
+    
+    let enjoyBreakLabel: UILabel = {
+        let enjoyBreakLabel = UILabel()
+        enjoyBreakLabel.text = "Break time, enjoy it while it lasts!"
+        enjoyBreakLabel.translatesAutoresizingMaskIntoConstraints = false
+        return enjoyBreakLabel
+    }()
+    let minutesLeftLabel: UILabel = {
+        let minutesLabel = UILabel()
+        minutesLabel.translatesAutoresizingMaskIntoConstraints = false
+        return minutesLabel
+    }()
+    let secondsLeftLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
    
     var realm: Realm? = {
         do {
@@ -40,13 +77,17 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     var settings = PomodoroSettings()
     
+    var photos = [UIImage]()
+    
     var timer: Timer!
+    
     var timeRemaining = 0
     var sessionsLeft = 0
     var sessions = 0
     var sessionLength = 0
     var shortPauseLength = 0
     var longPauseLength = 0
+    
     var isPauseTime = false
     var animationPause = false
     
@@ -63,32 +104,83 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     //MARK: - Prepare UI
-    
+  
     func setupUI() {
-        enjoyBreakLabel.isHidden = true
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        playButton.addTarget(self, action: #selector(didTouchPlayButton), for: .touchUpInside)
-       
+        preparePhotosArray()
+        setupCollectionView()
+        setupLabels()
+        addConstraints()
         drawShapes()
         subscribeToNotificationsFromSettings()
         setupMenuController()
         addChildControllers()
         setupTimer()
-        
-        let sawTutorial = defaults.bool(forKey: sawTutorialKey)
-        if !sawTutorial {
-            if let vc = storyboard?.instantiateViewController(identifier: "tutorialVC") as? TutorialViewController {
-                navigationController?.present(vc, animated: true, completion: nil)
+        checkIfTutorialWasSeen()
+    }
+    
+    func preparePhotosArray() {
+        if let settings = self.realm?.objects(PomodoroSettings.self)[0] {
+            sessions = settings.sets
+            for _ in 0..<sessions {
+                photos.append(UIImage(named: "pomoEmpty")!)
             }
         }
+        collectionView.reloadData()
+    }
+    
+    func setupCollectionView() {
+        collectionView?.delegate = self
+        collectionView?.dataSource = self
+        collectionView?.register(IconCollectionViewCell.nib(), forCellWithReuseIdentifier: IconCollectionViewCell.identifier)
+    }
+    
+    func setupLabels() {
+        minutesLeftLabel.textColor = Colors.myGreen
+        minutesLeftLabel.font = UIFont(name: "Roboto-Black", size: 110)
+        minutesLeftLabel.sizeToFit()
+        
+        secondsLeftLabel.textColor = Colors.myGreen
+        secondsLeftLabel.font = UIFont(name: "Roboto-Black", size: 60)
+        secondsLeftLabel.sizeToFit()
+        
+        enjoyBreakLabel.isHidden = true
+        enjoyBreakLabel.font = UIFont(name: "Roboto-Black", size: 25)
+        enjoyBreakLabel.sizeToFit()
+        
+        self.view.addSubview(enjoyBreakLabel)
+        self.view.addSubview(minutesLeftLabel)
+        self.view.addSubview(secondsLeftLabel)
+        self.view.addSubview(playButton)
+        self.view.addSubview(pauseButton)
+        self.view.addSubview(stopButton)
+    }
+    
+    func addConstraints() {
+        var constraints = [NSLayoutConstraint]()
+        
+        constraints.append(enjoyBreakLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20))
+        constraints.append(enjoyBreakLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor))
+        constraints.append(minutesLeftLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor))
+        constraints.append(minutesLeftLabel.topAnchor.constraint(equalTo: enjoyBreakLabel.centerYAnchor, constant: self.view.bounds.width / 2))
+        constraints.append(secondsLeftLabel.bottomAnchor.constraint(equalTo: minutesLeftLabel.topAnchor))
+        constraints.append(secondsLeftLabel.leadingAnchor.constraint(equalTo: minutesLeftLabel.trailingAnchor))
+        constraints.append(playButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor))
+        constraints.append(playButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -30))
+        constraints.append(pauseButton.trailingAnchor.constraint(equalTo: playButton.leadingAnchor, constant: 0))
+        constraints.append(pauseButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -30))
+        constraints.append(stopButton.leadingAnchor.constraint(equalTo: playButton.trailingAnchor, constant: 0))
+        constraints.append(stopButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -30))
+        
+        NSLayoutConstraint.activate(constraints)
     }
     
     func drawShapes() {
-        let circlePath = UIBezierPath(arcCenter: view.center,
-                                      radius: 150,
+        let bounds = UIScreen.main.bounds
+        let width = bounds.width
+        let anchor = CGPoint(x: width / 2, y: (width / 2) + 154)
+       
+        let circlePath = UIBezierPath(arcCenter: anchor,
+                                      radius: width / 2.2,
                                       startAngle: -(.pi / 2),
                                       endAngle: .pi * 3 / 2,
                                       clockwise: true)
@@ -98,17 +190,26 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         trackShape.fillColor = UIColor.clear.cgColor
         trackShape.lineWidth = 15
         trackShape.strokeColor = UIColor.lightGray.cgColor
-        view.layer.addSublayer(trackShape)
         
         shape.path = circlePath.cgPath
         shape.lineWidth = 15
-        shape.strokeColor = UIColor.blue.cgColor
+        shape.strokeColor = Colors.myGreen.cgColor
         shape.fillColor = UIColor.clear.cgColor
         shape.strokeEnd = 0
         shape.lineCap = .round
+        
+        view.layer.addSublayer(trackShape)
         view.layer.addSublayer(shape)
     }
     
+    func checkIfTutorialWasSeen() {
+        let sawTutorial = defaults.bool(forKey: sawTutorialKey)
+        if !sawTutorial {
+            if let vc = storyboard?.instantiateViewController(identifier: "tutorialVC") as? TutorialViewController {
+                navigationController?.present(vc, animated: true, completion: nil)
+            }
+        }
+    }
     //MARK: - Setup menu
     
     private func setupMenuController() {
@@ -214,13 +315,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             timeRemaining -= 1
         } else {
             if !isPauseTime {
+                shape.strokeColor = Colors.myOrange.cgColor
                 enjoyBreakLabel.isHidden = false
                 
+                minutesLeftLabel.textColor = Colors.myOrange
+                secondsLeftLabel.textColor = Colors.myOrange
+                
                 sessionsLeft -= 1
+                photos[sessions - sessionsLeft - 1] = UIImage(named: "pomoFull")!
                 isPauseTime = !isPauseTime
                 
                 let session = FocusSession()
                 let date = Date()
+                
                 session.date = date
                 session.sessionLength = sessionLength
                 
@@ -241,15 +348,21 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 animation.duration = Double(timeRemaining / 100)
                 animation.isRemovedOnCompletion = true
                 animation.fillMode = .forwards
+                
                 shape.add(animation, forKey: "animation")
             } else {
+                shape.strokeColor = Colors.myGreen.cgColor
                 enjoyBreakLabel.isHidden = true
+                
+                minutesLeftLabel.textColor = Colors.myGreen
+                secondsLeftLabel.textColor = Colors.myGreen
                 
                 isPauseTime = !isPauseTime
                 
                 if sessionsLeft == 0 {
                     let pomodoro = Pomodoro()
                     let date = Date()
+                    
                     pomodoro.date = date
                     pomodoro.pomodoroLength = sessionLength
                     pomodoro.sessions = sessions
@@ -267,6 +380,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     stopButton.isHidden = true
                     playButton.isHidden = false
                     
+                    for i in 0..<sessions {
+                        photos[i] = UIImage(named: "pomoEmpty")!
+                    }
+                    
                     setupTimer()
                     
                     showAlertWith(title: Localize(text: "Congrats"), message: Localize(text: "Pomodoro_completed"))
@@ -277,14 +394,17 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     animation.duration = Double(timeRemaining / 100)
                     animation.isRemovedOnCompletion = true
                     animation.fillMode = .forwards
+                    
                     shape.add(animation, forKey: "animation")
                 }
             }
         }
         minutesLeftLabel.text = "\(timeRemaining / 60)"
         secondsLeftLabel.text = "\(timeRemaining % 60)"
-        collectionView.reloadData()
+        collectionView?.reloadData()
     }
+    
+    //MARK: - Notifications
     
     func subscribeToNotificationsFromSettings() {
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveSettings(notification:)), name: .settingsChanged, object: nil)
@@ -302,22 +422,34 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             minutesLeftLabel.text = "\(timeRemaining / 60)"
             secondsLeftLabel.text = "0"
             
-            collectionView.reloadData()
+            photos = []
+            for _ in 0..<sessions {
+                if let photo = UIImage(named: "pomoEmpty") {
+                    photos.append(photo)
+                }
+            }
+            collectionView?.reloadData()
         }
     }
     
+    //MARK: - Shape Layer Actions
+    
     func pauseLayer(layer: CALayer) {
         let pausedTime: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil)
+        
         layer.speed = 0.0
         layer.timeOffset = pausedTime
     }
 
     func resumeLayer(layer: CALayer) {
         let pausedTime: CFTimeInterval = layer.timeOffset
+        
         layer.speed = 1.0
         layer.timeOffset = 0.0
         layer.beginTime = 0.0
+        
         let timeSincePause: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
+        
         layer.beginTime = timeSincePause
     }
     
@@ -326,7 +458,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func didTapMenuButton() {
         present(sideMenu!, animated: true)
     }
-    @IBAction func didTouchPlayButton(_ sender: Any) {
+    
+    @objc func didTouchPlayButton() {
         if animationPause {
             resumeLayer(layer: shape)
             animationPause = !animationPause
@@ -347,7 +480,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             shape.add(animation, forKey: "animation")
         }
     }
-    @IBAction func didTouchPauseButton(_ sender: Any) {
+    
+    @objc func didTouchPauseButton() {
         timer.invalidate()
         animationPause = !animationPause
         pauseLayer(layer: shape)
@@ -356,7 +490,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         pauseButton.isHidden = true
         stopButton.isHidden = true
     }
-    @IBAction func didTouchStopButton(_ sender: Any) {
+    
+    @objc func didTouchStopButton() {
         timer.invalidate()
         shape.removeAllAnimations()
         
@@ -369,7 +504,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         stopButton.isHidden = true
     }
     
-    //MARK: - Alert
+    //MARK: - Alerts
     
     func Localize(text: String) -> String {
         return NSLocalizedString(text, comment: "")
@@ -384,17 +519,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //MARK: - Collection View
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sessionsLeft
+        return photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
-            if let icon = cell.viewWithTag(100) as? UIImageView {
-                icon.frame = cell.bounds
-                icon.image = UIImage(named: "tomato")
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IconCollectionViewCell.identifier, for: indexPath) as? IconCollectionViewCell {
+            cell.icon.image = photos[indexPath.row]
             return cell
-            }
+    }
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return CGSize(width: 50, height: 50)
+        }
 }
 

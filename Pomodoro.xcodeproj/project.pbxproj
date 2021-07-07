@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		572AD021269344B70086A976 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572AD020269344B70086A976 /* Colors.swift */; };
+		572AD08726934B510086A976 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 572AD08626934B510086A976 /* Roboto-Black.ttf */; };
+		572AD08B2694DFEB0086A976 /* IconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572AD0892694DFEA0086A976 /* IconCollectionViewCell.swift */; };
+		572AD08C2694DFEB0086A976 /* IconCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 572AD08A2694DFEB0086A976 /* IconCollectionViewCell.xib */; };
+		572AD096269642B40086A976 /* PhotoTitleSubtitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572AD094269642B40086A976 /* PhotoTitleSubtitleCollectionViewCell.swift */; };
+		572AD097269642B40086A976 /* PhotoTitleSubtitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 572AD095269642B40086A976 /* PhotoTitleSubtitleCollectionViewCell.xib */; };
 		57307C92263C7CD900505702 /* PomodoroSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57307C91263C7CD900505702 /* PomodoroSettings.swift */; };
 		57307CB92640761C00505702 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57307CB82640761C00505702 /* Notifications.swift */; };
 		576D46BB264B16A1007AE5CC /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D46BA264B16A1007AE5CC /* TutorialViewController.swift */; };
@@ -33,6 +39,12 @@
 
 /* Begin PBXFileReference section */
 		40A39161B4DA47F48A215CD5 /* Pods_Pomodoro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pomodoro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		572AD020269344B70086A976 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		572AD08626934B510086A976 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Black.ttf"; path = "../../../../../Desktop/roboto/Roboto-Black.ttf"; sourceTree = "<group>"; };
+		572AD0892694DFEA0086A976 /* IconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCollectionViewCell.swift; sourceTree = "<group>"; };
+		572AD08A2694DFEB0086A976 /* IconCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconCollectionViewCell.xib; sourceTree = "<group>"; };
+		572AD094269642B40086A976 /* PhotoTitleSubtitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTitleSubtitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		572AD095269642B40086A976 /* PhotoTitleSubtitleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTitleSubtitleCollectionViewCell.xib; sourceTree = "<group>"; };
 		57307C91263C7CD900505702 /* PomodoroSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroSettings.swift; sourceTree = "<group>"; };
 		57307CB82640761C00505702 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		576D46BA264B16A1007AE5CC /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +102,7 @@
 				57307CB82640761C00505702 /* Notifications.swift */,
 				578048E02688B0D800FFB972 /* FAQSection.swift */,
 				5771B3DE268CBFD600DACEEC /* Tips.swift */,
+				572AD020269344B70086A976 /* Colors.swift */,
 				57307C91263C7CD900505702 /* PomodoroSettings.swift */,
 				57A3D31D2649755E00A3D311 /* Localizable.strings */,
 			);
@@ -140,6 +153,7 @@
 		5781CB5B263B1A7600228DF1 /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				572AD08626934B510086A976 /* Roboto-Black.ttf */,
 				5781CB5C263B1A7600228DF1 /* AppDelegate.swift */,
 				5781CB5E263B1A7600228DF1 /* SceneDelegate.swift */,
 				578048DC2685193900FFB972 /* Model */,
@@ -157,6 +171,10 @@
 			children = (
 				578048E4268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.swift */,
 				578048E5268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.xib */,
+				572AD094269642B40086A976 /* PhotoTitleSubtitleCollectionViewCell.swift */,
+				572AD095269642B40086A976 /* PhotoTitleSubtitleCollectionViewCell.xib */,
+				572AD0892694DFEA0086A976 /* IconCollectionViewCell.swift */,
+				572AD08A2694DFEB0086A976 /* IconCollectionViewCell.xib */,
 				57DD144A268A32D7007BBCAC /* SlidersTableViewCell.swift */,
 				57DD144B268A32D7007BBCAC /* SlidersTableViewCell.xib */,
 			);
@@ -233,8 +251,11 @@
 			files = (
 				57DD144D268A32D7007BBCAC /* SlidersTableViewCell.xib in Resources */,
 				578048E7268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.xib in Resources */,
+				572AD097269642B40086A976 /* PhotoTitleSubtitleCollectionViewCell.xib in Resources */,
 				5781CB69263B1A7700228DF1 /* LaunchScreen.storyboard in Resources */,
+				572AD08C2694DFEB0086A976 /* IconCollectionViewCell.xib in Resources */,
 				57A3D31B2649755E00A3D311 /* Localizable.strings in Resources */,
+				572AD08726934B510086A976 /* Roboto-Black.ttf in Resources */,
 				5781CB66263B1A7700228DF1 /* Assets.xcassets in Resources */,
 				5781CB64263B1A7600228DF1 /* Main.storyboard in Resources */,
 			);
@@ -298,10 +319,13 @@
 				57307C92263C7CD900505702 /* PomodoroSettings.swift in Sources */,
 				5781CB5D263B1A7600228DF1 /* AppDelegate.swift in Sources */,
 				5781CB7D263B358A00228DF1 /* FAQViewController.swift in Sources */,
+				572AD021269344B70086A976 /* Colors.swift in Sources */,
 				5781CB5F263B1A7600228DF1 /* SceneDelegate.swift in Sources */,
 				5781CB77263B350B00228DF1 /* SideMenu.swift in Sources */,
 				578048E12688B0D800FFB972 /* FAQSection.swift in Sources */,
 				5781CB84263B380100228DF1 /* SettingsViewController.swift in Sources */,
+				572AD096269642B40086A976 /* PhotoTitleSubtitleCollectionViewCell.swift in Sources */,
+				572AD08B2694DFEB0086A976 /* IconCollectionViewCell.swift in Sources */,
 				57DD144C268A32D7007BBCAC /* SlidersTableViewCell.swift in Sources */,
 				578048E6268A25CF00FFB972 /* InfoRestoreDetailsTableViewCell.swift in Sources */,
 			);

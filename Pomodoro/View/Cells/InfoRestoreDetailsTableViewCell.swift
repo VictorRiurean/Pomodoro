@@ -13,6 +13,8 @@ protocol RestoreDetailsProtocol: AnyObject {
 
 class InfoRestoreDetailsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var restoreDetailsButton: UIButton!
+    
     var delegate: RestoreDetailsProtocol?
     
     override func awakeFromNib() {

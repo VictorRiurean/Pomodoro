@@ -10,4 +10,5 @@ import UIKit
 struct Tips {
     var photo: UIImage
     var text: String
+    var title: String
 }

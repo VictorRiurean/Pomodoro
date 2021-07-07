@@ -25,6 +25,12 @@ class SlidersTableViewCell: UITableViewCell, RestoreDetailsProtocol, DidTouchSav
     @IBOutlet weak var longBreakSliderValueLabel: UILabel!
     @IBOutlet weak var setsSliderValueLabel: UILabel!
     
+    
+    @IBOutlet weak var focusInfoButton: UIButton!
+    @IBOutlet weak var shortBreakInfoButton: UIButton!
+    @IBOutlet weak var longBreakInfoButton: UIButton!
+    @IBOutlet weak var setsInfoButton: UIButton!
+    
     var delegate: ShowAlertProtocol?
     
     var settings = PomodoroSettings()

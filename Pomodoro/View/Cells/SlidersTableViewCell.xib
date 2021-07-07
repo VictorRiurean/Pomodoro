@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ks-13-PpO" userLabel="Focus &amp; Info Button Stack View">
-                        <rect key="frame" x="10" y="20" width="450" height="30"/>
+                        <rect key="frame" x="30" y="20" width="410" height="30"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Focus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxX-xG-Sxe">
                                 <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
@@ -25,8 +25,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAa-7L-Ocr">
-                                <rect key="frame" x="46" y="0.0" width="404" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAa-7L-Ocr">
+                                <rect key="frame" x="46" y="0.0" width="364" height="30"/>
                                 <state key="normal" title="i"/>
                                 <connections>
                                     <action selector="didTouchFocusInfoButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="v7C-3A-Mgf"/>
@@ -75,7 +75,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KED-It-dnB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KED-It-dnB">
                                 <rect key="frame" x="89.5" y="0.0" width="320.5" height="30"/>
                                 <state key="normal" title="i"/>
                                 <connections>
@@ -125,7 +125,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUA-b0-1N2">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUA-b0-1N2">
                                 <rect key="frame" x="85.5" y="0.0" width="324.5" height="30"/>
                                 <state key="normal" title="i"/>
                                 <connections>
@@ -175,7 +175,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBh-gc-FFB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBh-gc-FFB">
                                 <rect key="frame" x="34" y="0.0" width="376" height="30"/>
                                 <state key="normal" title="i"/>
                                 <connections>
@@ -191,22 +191,22 @@
                         </connections>
                     </slider>
                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KGf-LS-doC" userLabel="Sets Slider Indicators Stack View">
-                        <rect key="frame" x="10" y="523.5" width="450" height="20.5"/>
+                        <rect key="frame" x="30" y="523.5" width="410" height="20.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5v-bA-7AV">
-                                <rect key="frame" x="0.0" y="0.0" width="204.5" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="184.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0y-yW-dYQ" userLabel="setsSliderValueLabel">
-                                <rect key="frame" x="204.5" y="0.0" width="41.5" height="20.5"/>
+                                <rect key="frame" x="184.5" y="0.0" width="41.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maZ-qb-85Q">
-                                <rect key="frame" x="246" y="0.0" width="204" height="20.5"/>
+                                <rect key="frame" x="226" y="0.0" width="184" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -218,14 +218,14 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="KGf-LS-doC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="27f-HU-S9Y"/>
+                    <constraint firstItem="KGf-LS-doC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="27f-HU-S9Y"/>
                     <constraint firstItem="uYh-Fv-exj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="4Oz-Jz-ctk"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Rbi-Ss-7Bb" secondAttribute="trailing" constant="10" id="4sc-Uy-9UE"/>
                     <constraint firstAttribute="trailingMargin" secondItem="uYh-Fv-exj" secondAttribute="trailing" constant="10" id="5z1-RP-4Nx"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Id0-Q9-VcP" secondAttribute="trailing" constant="10" id="9Xn-wA-prK"/>
                     <constraint firstAttribute="trailingMargin" secondItem="okT-AS-35w" secondAttribute="trailing" constant="10" id="A28-NG-40s"/>
                     <constraint firstItem="NKO-Gd-CrE" firstAttribute="top" secondItem="3cU-RO-3ai" secondAttribute="bottom" constant="20" id="A3q-Da-o1a"/>
-                    <constraint firstItem="5ks-13-PpO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ABy-gW-adO"/>
+                    <constraint firstItem="5ks-13-PpO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="ABy-gW-adO"/>
                     <constraint firstItem="GtM-DV-Fin" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="ATj-IM-kO0"/>
                     <constraint firstItem="Id0-Q9-VcP" firstAttribute="top" secondItem="nnA-vW-fvS" secondAttribute="bottom" constant="20" id="Axv-9M-wWk"/>
                     <constraint firstItem="nnA-vW-fvS" firstAttribute="top" secondItem="uYh-Fv-exj" secondAttribute="bottom" constant="10" id="Bfj-9L-Itr"/>
@@ -235,7 +235,7 @@
                     <constraint firstItem="8UN-m0-opl" firstAttribute="top" secondItem="NKO-Gd-CrE" secondAttribute="bottom" constant="20" id="DqG-OU-OiC"/>
                     <constraint firstItem="GtM-DV-Fin" firstAttribute="top" secondItem="8UN-m0-opl" secondAttribute="bottom" constant="20" id="FYH-ie-Ot8"/>
                     <constraint firstItem="Rbi-Ss-7Bb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Go5-G9-svb"/>
-                    <constraint firstAttribute="trailing" secondItem="5ks-13-PpO" secondAttribute="trailing" constant="10" id="JmU-M6-eFD"/>
+                    <constraint firstAttribute="trailing" secondItem="5ks-13-PpO" secondAttribute="trailing" constant="30" id="JmU-M6-eFD"/>
                     <constraint firstItem="PNZ-8w-lje" firstAttribute="top" secondItem="okT-AS-35w" secondAttribute="bottom" constant="20" id="NAl-gY-wrr"/>
                     <constraint firstItem="nnA-vW-fvS" firstAttribute="top" secondItem="uYh-Fv-exj" secondAttribute="bottom" constant="10" id="UDr-Jd-rXb"/>
                     <constraint firstAttribute="trailingMargin" secondItem="GtM-DV-Fin" secondAttribute="trailing" constant="10" id="Wl2-Vx-5nh"/>
@@ -253,28 +253,30 @@
                     <constraint firstAttribute="trailingMargin" secondItem="PNZ-8w-lje" secondAttribute="trailing" constant="10" id="iPY-Qg-xzZ"/>
                     <constraint firstItem="NKO-Gd-CrE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="lHz-6k-dcU"/>
                     <constraint firstItem="okT-AS-35w" firstAttribute="top" secondItem="GtM-DV-Fin" secondAttribute="bottom" constant="20" id="lSN-rd-LAo"/>
-                    <constraint firstItem="KGf-LS-doC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="lcM-kv-3yh"/>
                     <constraint firstItem="uYh-Fv-exj" firstAttribute="top" secondItem="5ks-13-PpO" secondAttribute="bottom" constant="20" id="neI-Mn-bDV"/>
                     <constraint firstAttribute="trailingMargin" secondItem="nnA-vW-fvS" secondAttribute="trailing" constant="10" id="o9Z-32-5QX"/>
-                    <constraint firstAttribute="trailing" secondItem="KGf-LS-doC" secondAttribute="trailing" constant="10" id="t7F-lO-Kp9"/>
+                    <constraint firstAttribute="trailing" secondItem="KGf-LS-doC" secondAttribute="trailing" constant="30" id="t7F-lO-Kp9"/>
                     <constraint firstAttribute="trailingMargin" secondItem="GtM-DV-Fin" secondAttribute="trailing" constant="10" id="tHJ-SB-BAS"/>
                     <constraint firstItem="PNZ-8w-lje" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="tt3-Zy-W1r"/>
                     <constraint firstItem="nnA-vW-fvS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="vGs-kf-9uX"/>
                     <constraint firstItem="okT-AS-35w" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="wSW-bY-EtN"/>
                     <constraint firstItem="8UN-m0-opl" firstAttribute="top" secondItem="NKO-Gd-CrE" secondAttribute="bottom" constant="20" id="x3q-mv-yHC"/>
-                    <constraint firstAttribute="trailing" secondItem="KGf-LS-doC" secondAttribute="trailing" constant="10" id="xAd-QL-a5C"/>
                     <constraint firstItem="3cU-RO-3ai" firstAttribute="top" secondItem="Rbi-Ss-7Bb" secondAttribute="bottom" constant="10" id="z0l-W9-gKi"/>
                     <constraint firstAttribute="trailingMargin" secondItem="3cU-RO-3ai" secondAttribute="trailing" constant="10" id="z6Z-03-44t"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="focusInfoButton" destination="qAa-7L-Ocr" id="iAH-K4-Day"/>
                 <outlet property="focusSlider" destination="uYh-Fv-exj" id="0Lc-t0-RQX"/>
                 <outlet property="focusSliderValueLabel" destination="xu8-gM-bc6" id="cQo-uR-tGI"/>
+                <outlet property="longBreakInfoButton" destination="BUA-b0-1N2" id="hxY-pi-20e"/>
                 <outlet property="longBreakSlider" destination="8UN-m0-opl" id="4CB-6y-VWO"/>
                 <outlet property="longBreakSliderValueLabel" destination="K6d-KN-FdV" id="2g9-Wi-KXs"/>
+                <outlet property="setsInfoButton" destination="cBh-gc-FFB" id="0xX-SZ-nxX"/>
                 <outlet property="setsSlider" destination="PNZ-8w-lje" id="Gja-af-48A"/>
                 <outlet property="setsSliderValueLabel" destination="o0y-yW-dYQ" id="sNJ-21-IDn"/>
+                <outlet property="shortBreakInfoButton" destination="KED-It-dnB" id="F1u-2y-Su6"/>
                 <outlet property="shortBreakSlider" destination="Rbi-Ss-7Bb" id="9tv-c8-6Ge"/>
                 <outlet property="shortBreakSliderValueLabel" destination="AI5-pr-p8z" id="9y0-AJ-jT9"/>
             </connections>

@@ -39,4 +39,18 @@
 "How_to_use_app_3" = "And finally you need to do this";
 "Congrats" = "Congratulations!";
 "Pomodoro_completed" = "You have successfully completed a pomodoro!";
+"Tip_1" = "Don't worry about it! Millions of people around the world share the exact same problem as you! Our app aims to help you fix it by providing you the proper structure to get work done.";
+"Tip_2" = "Go to the settings tab and find the perfect settings for you. You can adjust the lenght of a focus session, the length of the short breaks, the long breaks and the number of repetitions you will go through before completing a Pomodoro.";
+"Tip_3" = "Don't worry about making the wrong choice. You should experiment with the settings over a few days or even weeks until you figure out which the perfect ones are for you. You should aim towards a sweet spot where you don't feel tired. ";
+"Tip_4" = "On a roll? Check out the statistics tab and see your progress quantified. You can learn a lot about your weekly productivity levels by comparing the number of pomodoros you finish on specific days.";
+"Tip_5" = "So you didn't use the app for a few days ... no big deal! Using the app is only a means to an end, not the end in itself! The more you use it, the better, but definitely don't be too hard on yourself. Progress is a journey, so be prepared for sidetracks and setbacks, but don't be discouraged by them.";
+"Tip_6" = "Ouch! Unfortunately right now there is no way to recover your statistics. We are working on delivering this feature on our next release, so with the new app update this problem will be fixed.";
+"Tip_7" = "If you have any questions that haven't been addressed in these tips, please visit our FAQ tab, maybe you'll find your answers there. You can also always send us an e-mail at: contact@pomodoroapp.com";
+"Tip_title_1" = "Struggling to be productive?";
+"Tip_title_2" = "Start with the settings tab!";
+"Tip_title_3" = "Don't know what works for you?";
+"Tip_title_4" = "Check your progress in the statistics tab!";
+"Tip_title_5" = "What if I forget to use the app?";
+"Tip_title_6" = "I accidentally deleted the app ...";
+"Tip_title_7" = "Any other concerns?";
 

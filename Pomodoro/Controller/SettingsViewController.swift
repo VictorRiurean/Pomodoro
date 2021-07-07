@@ -83,8 +83,13 @@ class SettingsViewController: UIViewController, ShowAlertProtocol, UITableViewDe
         
         if indexPath.row == 0 {
             infoCell.textLabel?.text = "Info"
+            infoCell.restoreDetailsButton.setTitleColor(.link, for: .normal)
             return infoCell
         } else {
+            slidersCell.focusInfoButton.setTitleColor(.link, for: .normal)
+            slidersCell.shortBreakInfoButton.setTitleColor(.link, for: .normal)
+            slidersCell.longBreakInfoButton.setTitleColor(.link, for: .normal)
+            slidersCell.setsInfoButton.setTitleColor(.link, for: .normal)
             return slidersCell
         }
     }
