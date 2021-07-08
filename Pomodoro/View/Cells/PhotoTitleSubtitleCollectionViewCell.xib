@@ -23,15 +23,14 @@
                             <constraint firstAttribute="width" constant="250" id="x3u-hP-ifV"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2a-2m-3KN">
-                        <rect key="frame" x="20" y="270" width="326" height="194.5"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2a-2m-3KN">
+                        <rect key="frame" x="162.5" y="270" width="41.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrP-vt-J0r">
-                        <rect key="frame" x="10" y="474.5" width="346" height="20.5"/>
+                        <rect key="frame" x="30" y="380" width="306" height="20.5"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -41,7 +40,9 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="l2a-2m-3KN" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="07r-3r-mJI"/>
                 <constraint firstItem="WHy-0v-Kun" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="AHb-jw-mKa"/>
+                <constraint firstItem="l2a-2m-3KN" firstAttribute="top" secondItem="WHy-0v-Kun" secondAttribute="bottom" constant="10" id="SwQ-cI-RaG"/>
                 <constraint firstItem="WHy-0v-Kun" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="ZHC-Pe-aNX"/>
             </constraints>
             <size key="customSize" width="366" height="505"/>

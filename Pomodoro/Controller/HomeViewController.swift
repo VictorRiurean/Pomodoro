@@ -119,7 +119,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func preparePhotosArray() {
-        if let settings = self.realm?.objects(PomodoroSettings.self)[0] {
+        if let settings = self.realm?.objects(PomodoroSettings.self).first {
+            sessions = settings.sets
+            for _ in 0..<sessions {
+                photos.append(UIImage(named: "pomoEmpty")!)
+            }
+        } else {
             sessions = settings.sets
             for _ in 0..<sessions {
                 photos.append(UIImage(named: "pomoEmpty")!)
@@ -294,7 +299,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //MARK: - Timer
     
     func setupTimer() {
-        if let settings = self.realm?.objects(PomodoroSettings.self)[0] {
+        if let settings = self.realm?.objects(PomodoroSettings.self).first {
+            timeRemaining = settings.focus * 60
+            sessionsLeft = settings.sets
+            sessions = sessionsLeft
+            sessionLength = settings.focus * 60
+            shortPauseLength = settings.shortBreak * 60
+            longPauseLength = settings.longBreak * 60
+        } else {
             timeRemaining = settings.focus * 60
             sessionsLeft = settings.sets
             sessions = sessionsLeft
