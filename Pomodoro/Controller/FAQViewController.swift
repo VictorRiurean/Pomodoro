@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, RefreshProtocol {
    
     @IBOutlet weak var tableView: UITableView!
 
@@ -16,12 +16,14 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = Colors.myVeryLightGray
         setupUI()
     }
     
     //MARK: - Prepare UI
     
     func setupUI() {
+        self.view.backgroundColor = Colors.myVeryLightGray
         sections = [
             Section(question: Localize(text: "Question_1"), answer: Localize(text: "Answer_1")),
             Section(question: Localize(text: "Question_2"), answer: Localize(text: "Answer_2")),
@@ -34,44 +36,34 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(FAQTableViewCell.nib(), forCellReuseIdentifier: FAQTableViewCell.identifier)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.tableFooterView = UIView()
+        tableView.allowsSelection = false
     }
     
     func Localize(text: String) -> String {
         return NSLocalizedString(text, comment: "")
     }
     
+    func refresh() {
+        tableView.reloadData()
+    }
+    
     //MARK: - Table View
-   
-    func numberOfSections(in tableView: UITableView) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section = sections[section]
-        if section.isOpened {
-            return 2
-        } else {
-            return 1
-        }
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        if indexPath.row == 0 {
-            cell.textLabel?.text = sections[indexPath.section].question
-            cell.textLabel?.numberOfLines = 0
-        } else {
-            cell.textLabel?.text = sections[indexPath.section].answer
-            cell.textLabel?.numberOfLines = 0
+        if let cell = tableView.dequeueReusableCell(withIdentifier: FAQTableViewCell.identifier, for: indexPath) as? FAQTableViewCell {
+            cell.questionLabel.text = sections[indexPath.row].question
+            cell.questionLabel.font = .boldSystemFont(ofSize: 18)
+            cell.answerLabel.text = sections[indexPath.row].answer
+            cell.delegate = self
+            return cell
         }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        sections[indexPath.section].isOpened = !sections[indexPath.section].isOpened
-        tableView.reloadSections([indexPath.section], with: .none)
+        return UITableViewCell()
     }
 }

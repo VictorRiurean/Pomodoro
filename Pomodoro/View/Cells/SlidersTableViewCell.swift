@@ -48,6 +48,7 @@ class SlidersTableViewCell: UITableViewCell, RestoreDetailsProtocol, DidTouchSav
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initial display
+        self.backgroundColor = Colors.myVeryLightGray
         if let settingsArray = realm?.objects(PomodoroSettings.self) {
             if settingsArray.isEmpty {
                 try! realm?.write {
@@ -55,7 +56,6 @@ class SlidersTableViewCell: UITableViewCell, RestoreDetailsProtocol, DidTouchSav
                 }
             }
         }
-        
         setupSliders()
     }
 
@@ -68,6 +68,10 @@ class SlidersTableViewCell: UITableViewCell, RestoreDetailsProtocol, DidTouchSav
     //MARK: - Prepare Sliders
     
     func setupSliders() {
+        focusSlider.tintColor = Colors.myOrange
+        shortBreakSlider.tintColor = Colors.myOrange
+        longBreakSlider.tintColor = Colors.myOrange
+        setsSlider.tintColor = Colors.myOrange
         if let settings = realm?.objects(PomodoroSettings.self)[0] {
             focusSlider.minimumValue = 10
             focusSlider.maximumValue = 50

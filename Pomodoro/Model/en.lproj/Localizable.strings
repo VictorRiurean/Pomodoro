@@ -12,17 +12,17 @@
 "Focus_sessions_completed" = "Focus sessions completed";
 "Pomodoros_completed" = "Pomodoros completed";
 "Daily_info" = "Daily Info";
-"Focus_info" = "Focus Info";
-"Focus_info_message" = "Focus Info Message";
-"Short_break_info" = "Short Break Info";
-"Short_break_info_message" = "Short Break Info Message";
-"Long_break_info" = "Long Break Info";
-"Long_break_info_message" = "Long Break Info Message";
-"Sets_info" = "Sets Info";
-"Sets_info_message" = "Sets Info Message";
+"Focus_info" = "Info";
+"Focus_info_message" = "How many minutes you wish to focus during one focus session.";
+"Short_break_info" = "Info";
+"Short_break_info_message" = "How many minutes you wish your short breaks to be.";
+"Long_break_info" = "Info";
+"Long_break_info_message" = "How many minutes you wish your long breaks to be.";
+"Sets_info" = "Info";
+"Sets_info_message" = "How many repetitions of the focus session - break cycle you want to go through";
 "Question_1" = "What is a Pomodoro?";
 "Question_2" = "What is the best focus session length?";
-"Question_3" = "I'm experiencing fatigue by the time I finish a whole Pomodoro. What should I do?";
+"Question_3" = "Should I be experiencing fatigue when using the app?";
 "Question_4" = "What are the benefits of using the Pomodoro technique?";
 "Question_5" = "How many Pomodoros per day should I do?";
 "Question_6" = "Is there any research backing this technique up?";
@@ -53,4 +53,8 @@
 "Tip_title_5" = "What if I forget to use the app?";
 "Tip_title_6" = "I accidentally deleted the app ...";
 "Tip_title_7" = "Any other concerns?";
-
+"General_statistics" = "General statistics";
+"General_statistics_note" = "*based on your activity since installing the app";
+"Statistics_by_day" =  "Statistics by day";
+"Statistics_by_day_note" = "Get the statistics for a specific date.";
+"Statistics_for_date" = "Statistics for";

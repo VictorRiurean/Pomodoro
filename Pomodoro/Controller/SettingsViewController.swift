@@ -15,6 +15,7 @@ protocol DidTouchSaveButtonProtocol {
 class SettingsViewController: UIViewController, ShowAlertProtocol, UITableViewDelegate, UITableViewDataSource {
   
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var saveButton: UIButton!
     
     var delegate: DidTouchSaveButtonProtocol?
     
@@ -33,6 +34,7 @@ class SettingsViewController: UIViewController, ShowAlertProtocol, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = Colors.myVeryLightGray
         setupUI()
     }
     
@@ -48,6 +50,10 @@ class SettingsViewController: UIViewController, ShowAlertProtocol, UITableViewDe
         tableView.dataSource = self
         
         tableView.allowsSelection = false
+        tableView.separatorColor = .clear
+        tableView.backgroundColor = Colors.myVeryLightGray
+        
+        saveButton.setTitleColor(Colors.myOrange, for: .normal)
     }
     
     func Localize(text: String) -> String {
@@ -83,7 +89,7 @@ class SettingsViewController: UIViewController, ShowAlertProtocol, UITableViewDe
         
         if indexPath.row == 0 {
             infoCell.textLabel?.text = "Info"
-            infoCell.restoreDetailsButton.setTitleColor(.link, for: .normal)
+            infoCell.restoreDetailsButton.setTitleColor(Colors.myOrange, for: .normal)
             return infoCell
         } else {
             slidersCell.focusInfoButton.setTitleColor(.link, for: .normal)

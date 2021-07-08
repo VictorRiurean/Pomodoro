@@ -16,6 +16,8 @@ class Colors {
     
     static var myTextGray = UIColor(rgb: 0x5a5353)
     
+    static var myVeryLightGray = UIColor(rgb: 0xF9F9F9)
+    
     static var myGreen = UIColor(rgb: 0x1eae98)
     
     static var myOrange = UIColor(rgb: 0xff9500)

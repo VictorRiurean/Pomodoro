@@ -33,6 +33,7 @@ class TutorialViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        view.backgroundColor = Colors.myVeryLightGray
         setupUI()
     }
     
@@ -49,6 +50,7 @@ class TutorialViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = .clear
         
         if currentPosition == 0 {
             leftButton.isHidden = true
@@ -89,13 +91,6 @@ class TutorialViewController: UIViewController, UICollectionViewDelegate, UIColl
             cell.titleTip.numberOfLines = 4
             cell.titleTip.font = .boldSystemFont(ofSize: 18)
             cell.titleTip.sizeToFit()
-            
-            if indexPath.section % 2 == 0 {
-                cell.backgroundColor = .red
-            } else {
-                cell.backgroundColor = .blue
-            }
-            
             return cell
         }
         return UICollectionViewCell()

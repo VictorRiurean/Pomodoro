@@ -11,10 +11,19 @@ import FSCalendar
 
 class StatisticsViewController: UIViewController, FSCalendarDelegate {
 
+    @IBOutlet weak var generalStatisticsLabel: UILabel!
+    @IBOutlet weak var noteLabel: UILabel!
+    @IBOutlet weak var generalStatisticsView: UIView!
     @IBOutlet weak var focusSessionsLabel: UILabel!
     @IBOutlet weak var focusHoursLabel: UILabel!
     @IBOutlet weak var pomodorosLabel: UILabel!
     @IBOutlet weak var calendar: FSCalendar!
+    @IBOutlet weak var perDayStatisticsView: UIView!
+    @IBOutlet weak var perDayTitleLabel: UILabel!
+    @IBOutlet weak var perDayFocusSessionsLabel: UILabel!
+    @IBOutlet weak var perDayPomodorosLabel: UILabel!
+    @IBOutlet weak var statisticsByDayLabel: UILabel!
+    @IBOutlet weak var subtitleByDayLabel: UILabel!
     
     var hours = 0.0
     var pomodorosCount = 0
@@ -33,12 +42,17 @@ class StatisticsViewController: UIViewController, FSCalendarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = Colors.myVeryLightGray
         setupUI()
     }
     
     //MARK: - Prepare UI
     
     func setupUI() {
+        generalStatisticsView.layer.cornerRadius = 10
+        perDayStatisticsView.layer.cornerRadius = 10
+        calendar.layer.cornerRadius = 10
+        perDayStatisticsView.isHidden = true
         calendar.delegate = self
         subscribeToNotificationsFromHome()
         updateLabels()
@@ -61,6 +75,15 @@ class StatisticsViewController: UIViewController, FSCalendarDelegate {
         focusHoursLabel.sizeToFit()
         pomodorosLabel.text = "\(Localize(text: "Pomodoros")): \(pomodoros?.count ?? 0)"
         pomodorosLabel.sizeToFit()
+        
+        generalStatisticsLabel.text = "\(Localize(text: "General_statistics"))"
+        generalStatisticsLabel.textColor = Colors.myOrange
+        generalStatisticsLabel.font = .boldSystemFont(ofSize: 22)
+        noteLabel.text = "\(Localize(text: "General_statistics_note"))"
+        statisticsByDayLabel.text = "\(Localize(text: "Statistics_by_day"))"
+        statisticsByDayLabel.textColor = Colors.myOrange
+        statisticsByDayLabel.font = .boldSystemFont(ofSize: 22)
+        subtitleByDayLabel.text = "\(Localize(text: "Statistics_by_day_note"))"
     }
     
     func Localize(text: String) -> String {
@@ -111,17 +134,17 @@ class StatisticsViewController: UIViewController, FSCalendarDelegate {
                 }
             }
         }
+      
+        if perDayStatisticsView.isHidden {
+            perDayStatisticsView.isHidden = false
+        }
         
-        let title = Localize(text: "Daily_info")
-        let message = """
+        perDayTitleLabel.text = "\(Localize(text: "Statistics_for_date")) \(selectedDateString)"
+        perDayTitleLabel.textColor = Colors.myOrange
+        perDayTitleLabel.font = .boldSystemFont(ofSize: 18)
+        perDayFocusSessionsLabel.text = "\(Localize(text: "Focus_sessions_completed")): \(focusSessionsCount)"
+        perDayPomodorosLabel.text = "\(Localize(text: "Pomodoros_completed")): \(pomodorosCount)"
 
-        \(Localize(text: "Focus_sessions_completed")): \(focusSessionsCount)
-        \(Localize(text: "Pomodoros_completed")): \(pomodorosCount)
-
-        """
-        
-        showAlertWith(title: title, message: message)
-        
         pomodorosCount = 0
         focusSessionsCount = 0
     }

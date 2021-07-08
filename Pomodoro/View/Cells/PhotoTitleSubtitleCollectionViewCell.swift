@@ -23,5 +23,4 @@ class PhotoTitleSubtitleCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

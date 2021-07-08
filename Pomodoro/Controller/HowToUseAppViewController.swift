@@ -37,7 +37,8 @@ class HowToUseAppViewController: UIViewController, UICollectionViewDelegate, UIC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
+        view.backgroundColor = Colors.myVeryLightGray
         setupUI()
     }
     
@@ -52,6 +53,7 @@ class HowToUseAppViewController: UIViewController, UICollectionViewDelegate, UIC
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = .clear
         
         if currentPosition == 0 {
             leftButton.isHidden = true
@@ -72,8 +74,7 @@ class HowToUseAppViewController: UIViewController, UICollectionViewDelegate, UIC
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return tips.count
-        return 1
+        return tips.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -100,6 +100,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = Colors.myVeryLightGray
         setupUI()
     }
     
@@ -137,6 +138,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView?.delegate = self
         collectionView?.dataSource = self
         collectionView?.register(IconCollectionViewCell.nib(), forCellWithReuseIdentifier: IconCollectionViewCell.identifier)
+        collectionView.backgroundColor = .clear
     }
     
     func setupLabels() {
