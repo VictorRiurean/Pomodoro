@@ -217,6 +217,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             }
         }
     }
+    
     //MARK: - Setup menu
     
     private func setupMenuController() {
@@ -442,6 +443,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     photos.append(photo)
                 }
             }
+            setupTimer()
             collectionView?.reloadData()
         }
     }
@@ -545,7 +547,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: 50, height: 50)
+        return CGSize(width: 50, height: 50)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if photos.count < 4 {
+            let totalCellWidth = 50 * photos.count
+            let totalSpacingWidth = 10 * (photos.count - 1)
+            
+            let leftInset = (collectionView.bounds.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
+            let rightInset = leftInset
+            return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
         }
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
 }
 
