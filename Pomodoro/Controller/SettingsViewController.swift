@@ -12,7 +12,7 @@ protocol DidTouchSaveButtonProtocol {
     func didTouchSaveButton()
 }
 
-class SettingsViewController: UIViewController, ShowAlertProtocol, UITableViewDelegate, UITableViewDataSource {
+class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ShowAlertProtocol {
   
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var saveButton: UIButton!

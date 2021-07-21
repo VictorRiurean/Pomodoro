@@ -58,9 +58,7 @@ class FAQViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: FAQTableViewCell.identifier, for: indexPath) as? FAQTableViewCell {
-            cell.questionLabel.text = sections[indexPath.row].question
-            cell.questionLabel.font = .boldSystemFont(ofSize: 18)
-            cell.answerLabel.text = sections[indexPath.row].answer
+            cell.setupCell(section: sections[indexPath.row])
             cell.delegate = self
             return cell
         }

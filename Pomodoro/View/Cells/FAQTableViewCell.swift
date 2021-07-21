@@ -12,12 +12,14 @@ protocol RefreshProtocol {
 }
 
 class FAQTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var showHideButton: UIButton!
     
     static let identifier = "FAQcellID"
+    
+    var section: Section?
     
     static func nib() -> UINib {
         return UINib(nibName: "FAQTableViewCell", bundle: nil)
@@ -36,6 +38,8 @@ class FAQTableViewCell: UITableViewCell {
         layer.shadowOffset = CGSize(width: 3, height: 3)
         layer.shadowColor = Colors.myVeryLightGray.cgColor
         answerLabel.isHidden = true
+        
+        questionLabel.font = .boldSystemFont(ofSize: 18)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -44,16 +48,35 @@ class FAQTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func didTouchShowHideButton(_ sender: Any) {
-        if answerLabel.isHidden {
-            answerLabel.isHidden = false
+    func setupCell(section: Section) {
+        self.section = section
+        
+        questionLabel.text = section.question
+        answerLabel.text = section.answer
+        
+        let isOpen = section.isOpened
+        answerLabel.isHidden = !isOpen
+        
+        if isOpen {
             showHideButton.setImage(UIImage(named: "substract"), for: .normal)
-            delegate?.refresh()
         } else {
-            answerLabel.isHidden = true
             showHideButton.setImage(UIImage(named: "add"), for: .normal)
-            delegate?.refresh()
         }
+    }
+    
+    @IBAction func didTouchShowHideButton(_ sender: Any) {
+        guard let section = self.section else { return }
+        
+        answerLabel.isHidden = !section.isOpened
+        
+        if section.isOpened {
+            showHideButton.setImage(UIImage(named: "substract"), for: .normal)
+        } else {
+            showHideButton.setImage(UIImage(named: "add"), for: .normal)
+        }
+        
+        section.isOpened = !section.isOpened
+        delegate?.refresh()
     }
     
 }
