@@ -15,7 +15,6 @@
 		572AD097269642B40086A976 /* PhotoTitleSubtitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 572AD095269642B40086A976 /* PhotoTitleSubtitleCollectionViewCell.xib */; };
 		572AD0A1269716D40086A976 /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572AD09F269716D40086A976 /* FAQTableViewCell.swift */; };
 		572AD0A2269716D40086A976 /* FAQTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 572AD0A0269716D40086A976 /* FAQTableViewCell.xib */; };
-		572AD0A6269717D30086A976 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572AD0A5269717D30086A976 /* ShadowView.swift */; };
 		57307C92263C7CD900505702 /* PomodoroSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57307C91263C7CD900505702 /* PomodoroSettings.swift */; };
 		57307CB92640761C00505702 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57307CB82640761C00505702 /* Notifications.swift */; };
 		576D46BB264B16A1007AE5CC /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576D46BA264B16A1007AE5CC /* TutorialViewController.swift */; };
@@ -50,7 +49,6 @@
 		572AD095269642B40086A976 /* PhotoTitleSubtitleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTitleSubtitleCollectionViewCell.xib; sourceTree = "<group>"; };
 		572AD09F269716D40086A976 /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
 		572AD0A0269716D40086A976 /* FAQTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQTableViewCell.xib; sourceTree = "<group>"; };
-		572AD0A5269717D30086A976 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		57307C91263C7CD900505702 /* PomodoroSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroSettings.swift; sourceTree = "<group>"; };
 		57307CB82640761C00505702 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		576D46BA264B16A1007AE5CC /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 				578048E02688B0D800FFB972 /* FAQSection.swift */,
 				5771B3DE268CBFD600DACEEC /* Tips.swift */,
 				572AD020269344B70086A976 /* Colors.swift */,
-				572AD0A5269717D30086A976 /* ShadowView.swift */,
 				57307C91263C7CD900505702 /* PomodoroSettings.swift */,
 				57A3D31D2649755E00A3D311 /* Localizable.strings */,
 			);
@@ -324,7 +321,6 @@
 				5781CB80263B35AE00228DF1 /* HowToUseAppViewController.swift in Sources */,
 				5771B3DF268CBFD600DACEEC /* Tips.swift in Sources */,
 				5781CB61263B1A7600228DF1 /* HomeViewController.swift in Sources */,
-				572AD0A6269717D30086A976 /* ShadowView.swift in Sources */,
 				5781CB7A263B357E00228DF1 /* StatisticsViewController.swift in Sources */,
 				576D46BB264B16A1007AE5CC /* TutorialViewController.swift in Sources */,
 				57307C92263C7CD900505702 /* PomodoroSettings.swift in Sources */,
